@@ -1,3 +1,7 @@
+:root {
+  --main-color: #e38528;
+}
+
 * {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -12,7 +16,6 @@
 }
 
 html {
-  font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -29,12 +32,95 @@ header {
   bottom: 0;
   background-color: #222;
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: space-between;
   z-index: 1000;
   flex-direction: column;
   padding: 128px 32px;
+  width: 480px;
+  text-align: center;
+}
+
+header .logo {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+header .logo span {
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+header .navbar a {
+  display: block;
+  font-size: 28px;
+  color: #fff;
+}
+
+header .navbar a:hover {
+  letter-spacing: 20px;
+  color: var(--main-color);
 }
 
 header {
+  display: flex;
+  gap: 20px;
+}
+
+header .follow a {
+  font-size: 32px;
+  color: #fff;
+  padding: 4px;
+}
+
+header .follow a:hover {
+  color: var(--main-color);
+}
+
+.menu-bars {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10000;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 48px;
+  cursor: pointer;
+  display: none;
+}
+
+/* media queries */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .menu-bars {
+    display: block;
+  }
+
+  header {
+    display: none;
+  }
+
+  header.active {
+    display: block;
+  }
+}
+
+@media (max-width: 450px) {
+  * {
+    font-size: 10%;
+  }
 }
